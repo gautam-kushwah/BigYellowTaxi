@@ -21,8 +21,11 @@ Gautam Kushwah & Krishnan C.S.
 
 # Introduction
 
-The app is written in R and hosted on Shiny apps website. The app helps creates visualisation based on the data provided to it and helps the
-user get a better understanding of the data and possibly make inferences.
+
+This app was built as part of CS 424 - Visualization and Visual Analytics Course  under Dr. Andrew Johnson in Spring 2022.  The app is written in R and hosted on the evl(electronic visualization laboratory) shiny app server.
+This app visualizes data on Taxi rides in and outside Chicago in multiple ways using R, Shiny, leaflet and Shiny Dashboard  to help the user get a better understanding of the data and make inferences.
+
+The app is made to be served on a large screen size (11,520 X 3, 240 pixels). Therefore viewing it on a smaller screen would lead to the layout breaking up. A simple solution is to emulate a large screen size using chrome or some other browser.
 
 
 ### Software version
@@ -43,53 +46,93 @@ Shiny is an R package that makes it easy to build interactive web apps straight 
 
 ### Purpose of this App
 
-The purpose of this app is to use the data provided on riders on the Chicago L over the past 20 years and use shiny to give people an interactive interface to create those visualizations. 
-The app provides an interactive map with the locations of the stations marked on it with their respective line colors and tapping on the markers gives more information about the line that station serves and and the number of rides on a particular date.
-The dashboard can also provide the difference in the number of rides between two dates on a particular station.
+The purpose of this app is to use the data provided on Taxi rides in and outside Chicago in 2019 and use shiny to give people an interactive interface to create those visualizations. Since the 2019 data is pre-COVID it is more representative of a 'typical' year.  
 
-The data is presented on the map, in the form of a bar plot and also in the form of a table with controls for each of them
+The data is presented in various ways, in the form of a map, a heatmap, bar plots and also in the form of tables with controls for each of them.
 
-The app provides various data visualizations in the form of bar graphs breaking down data across all years, individual years, months, and even days in a week over a month.
+The app provides various data visualizations in the form of bar graphs breaking down rides in and outside chicago across days,  months, and days of the week and by the starting hour. It also includes plots for percentage of rides to/from each community, and taxi company. 
 
+The user can choose to view the data in km/miles, the hour in 24/12hr formats, and to/from community area. There are also options for the user to select a community area and taxi company. The user may choose to include rides outside chicago as well. There is also a map of Chicago community areas using which the user may select the community area to view a heatmap showing the  percentage of rides to/from the community. The user may also select taxi company to subset this heatmap, showing percentage of rides to/from that community by that taxi company only. 
 
-The app could also help find interesting dates in the last 20 years which might have affected the behavior of the riders and thus help us understand the power of data and data visualization.
+The app could also help the user find interesting things about the data which might have affected the behavior of the taxi rides and thus help us understand the power of data and data visualization.
+
 
 ### How to use the App?
 
-You can head over to the app [!here](https://gautam-kushwah.shinyapps.io/424_project2/). Upon opening the app, you would be greeted with a Shiny dashboard which would give you a map with locations of the stations marked and a bar plot for the toal number of rides for all the staions on that day. 
+You can head over to the app [here](http://shiny.evl.uic.edu:3838/g16/kg-taxi/). Upon opening the app, you would be greeted with a Shiny dashboard which would give you a map of chicago communities with their boundaries marked, bar plots for the toal number of rides, and those rides filtered through  hourly entries, entries for day of the week, month, mileage and trip time. 
 
-The app has three sections
+The app has two sections
 
 1. Home Page
 2. About Page
-3. Yearly Plots page
+
 
 These sections could be navigated through using the navigation bar on the left.
-<img width="407" alt="image" src="https://user-images.githubusercontent.com/40148194/158264770-5178df3c-abef-4f86-adf9-9f2fe1809b1a.png">
+
+<img width="337" alt="image" src="https://user-images.githubusercontent.com/40148194/165185954-a3fa0b63-e61e-406b-ae0e-87a2cd7bb377.png">
+
 
 
 
 ## Home Page
+<img width="1429" alt="image" src="https://user-images.githubusercontent.com/40148194/165186139-b6f3f1ba-7cbc-4b82-80d3-14e57f2b1434.png">
+
+The home page has all the controls for the visualisations shown i.e the map with community areas locations and their data, in a separate section marked input controls.
+<img width="132" alt="image" src="https://user-images.githubusercontent.com/40148194/165186554-54b2d0b6-b95e-49e5-99ea-b077d231c951.png">
+
+
+There are 7 input controls
+1. Outside Chicago checkbox: A checkmark to decide whether or not to include data for trips ending or beginning outside chicago
+2. Mode: A radio button to select whether the ride ends or originates from a selected community
+3. Select Community: A dropdown list of all the chicago community areas. Includes "Outside Chicago" if the Outside Chicago checkbox is checked
+4. Select Taxi Company: A dropdown list of all the taxi companies included in the dataset
+5. Time Format: To select whether to view the time in 12hr or 24hr format on the visualisations
+6. Show Distance in: To select whether to show distance in km or miles on the visualisation
+7. Chicago Community Map: The map itslef can be used an input to select the community areas.
+
+
+The app has 8 visualisations
 
 
 
 
-### Different dates mode
+### 1.Bar chart for all the entries across the year
+<img width="562" alt="image" src="https://user-images.githubusercontent.com/40148194/165187589-5168429d-214e-4b13-afb9-1572583ceeb4.png">
 
 
 
-### Bar chart sorted in a descending manner 
+### 2. Bar chart for rides binned by hour of the day
+<img width="555" alt="image" src="https://user-images.githubusercontent.com/40148194/165187861-be1c99af-b910-45c6-b566-9c1ac11029e3.png">
+
+### 3. Bar chart for rides binned by day of the week
+<img width="559" alt="image" src="https://user-images.githubusercontent.com/40148194/165187974-13ab2a64-6d91-4e5c-a0df-0f42936a9654.png">
+
+### 4. Bar chart for rides binned by month
+<img width="575" alt="image" src="https://user-images.githubusercontent.com/40148194/165188397-6350e7ec-421a-4c42-9c0a-0d375d2e7455.png">
+
+### 5. Bar chart for rides binned by mileage
+<img width="558" alt="image" src="https://user-images.githubusercontent.com/40148194/165188613-f4477750-4b22-448d-9766-92b159a64763.png">
+
+
+### 6. Bar chart for rides binned by trip time
+<img width="579" alt="image" src="https://user-images.githubusercontent.com/40148194/165188661-11a37ed2-3d82-47a4-9607-536bbaabd1d5.png">
+
+
+### 7. Heatmap for percentage of rides ending or starting in a community
+<img width="604" alt="image" src="https://user-images.githubusercontent.com/40148194/165189055-06c3b2c2-18a9-4743-b00e-9821fb5813b5.png">
+<img width="489" alt="image" src="https://user-images.githubusercontent.com/40148194/165189283-3c908eed-85e8-4c10-ad96-9ffbcae71c5b.png">
+
+
+### 8. Bar plot for percentage of rides ending or starting in a community
+<img width="241" alt="image" src="https://user-images.githubusercontent.com/40148194/165189335-a50df93a-3553-4e1b-98ad-e2c1eea9a3f9.png">
+
+
+
+All of these visualisations, except 7 and 8, could also be viewed in the form of a table.
 
 
 
 
-
-
-## Yearly Plots Page
-
-
-
-## Data tables instead of bar charts
 
 
 
@@ -99,7 +142,9 @@ These sections could be navigated through using the navigation bar on the left.
 # About the Data
 
 
-The data was obtained from Chicago Data portal, the link to the data could be found [here](https://data.cityofchicago.org/Transportation/CTA-Ridership-L-Station-Entries-Daily-Totals/5neh-572f)
+The trip data was obtained from Chicago Data portal, the link to the data could be found [here](https://data.cityofchicago.org/Transportation/CTA-Ridership-L-Station-Entries-Daily-Totals/5neh-572f)
+
+The map data was also taken from the Chicago Data portal and tge link could be found [here](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6)
 
 This list shows daily totals of ridership, by station entry, for each 'L' station dating back to 2001. Dataset shows entries at all turnstiles, combined, for each station.
 
