@@ -71,51 +71,27 @@ These sections could be navigated through using the navigation bar on the left.
 
 ## Home Page
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/40148194/158264992-1571f6f4-8f8f-4897-8d2b-bff3d5c05aeb.png">
 
-
-The home page has all the controls for the visualisations shown i.e the map with station locations and their data, a bar plot with total entries for that day for all the stations and a table representing the same data, in a separate section marked input controls.
-
-From here the user can select the date and the visualisations would be updated.
-
-The user can select to order the bar graph and the data table using the "Select the order of the bar chart" dropdown. The three options available are
-Ascending, Alphabetical and descending.
-
-There are also **Prev Day** and **Next Day** button to quickly see data for the previous day and the next day respectively.
-
-The app has two modes of visualisation
-
-1. Single Date
-2. Different Dates
-
-The different dates mode enables the user to select two different dates and then uses the difference between the ridership information on those two dates to make all the visualsation. All other controls work as before.
 
 
 ### Different dates mode
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/40148194/158268265-fa0da252-2cf6-42af-8c4a-3021cdc51b76.png">
+
 
 ### Bar chart sorted in a descending manner 
 
-<img width="1272" alt="image" src="https://user-images.githubusercontent.com/40148194/158273995-58aab997-adf6-420b-9752-19c15c4b8af4.png">
+
 
 
 
 
 ## Yearly Plots Page
 
-The yearly data visualizations in the form of bar graphs breaking down data across all years, individual years, months, and even days in a week over a month for a particular station.
-
-The user can select the station from the list of all the stations on the left or from tapping a station on the mao. The user can also select the year for which they want to see thr visualisations.
-
-The user can also select whether they want to see the visualisations in the form of bar plots or in the form of tables.
-
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/40148194/158270629-d9195c2e-d8af-47f3-8539-b5fa07174121.png">
 
 
 ## Data tables instead of bar charts
 
-<img width="1304" alt="image" src="https://user-images.githubusercontent.com/40148194/158274122-5347a201-ac1d-497e-bdee-727362cfe120.png">
+
 
 
 
@@ -186,19 +162,21 @@ The columns are as follows
 ### R Libraries required to process the data
 
 ```
-library(shiny)
 library(lubridate)
 library(ggplot2)
-library(shinydashboard)
-library(dplyr)
-library(stringr)
 library(leaflet)
-library(leaflet.providers)
 library(leaflet.extras)
-library(DT)
+library(dplyr)
+library(scales)
+library(shiny)
 library(shinyjs)
-library(tidyverse)
-library(reshape2) 
+library(shinydashboard)
+library(data.table)
+library(purrr)
+library(rgdal)
+library(RColorBrewer)
+library(DT)
+library(pryr)
 
 ```
 
@@ -207,10 +185,14 @@ The date was provided in a chr format, therefore it had to be converted into a u
 The data was downloaded in tsv format, since the free version of Shiny allows us to only work with files which are <5 mb, I used shell script to break it down into smaller files using shell and the following command
 
 ```
-split -b <size in kb> <filename> <name of parts>
+#Splitting data file into smaller chunks
+no_of_chunks <- 15
+split_vector <- ceiling(1: nrow(taxi)/nrow(taxi) * no_of_chunks)
+res <- split(taxi, split_vector)
+map2(res, paste0("part_", names(res), ".csv"), write.csv, row.names=FALSE)
 ```
 
-The <name of parts> signifies what the broken down files would be named.
+
 
 
 I then used a code editor to verify if the files were broken down correctly, and upon verifying that I loaded the filenames in a list in R and then stitched them together into a single table, hence being able to work with all the rows, using the code below
@@ -284,64 +266,3 @@ To refer to the instructions on how to use and interact with app, please read th
 # Observation and Inferences 
 
   
-### 1 Addition of more stations to yellow line
-<img width="740" alt="image" src="https://user-images.githubusercontent.com/40148194/158276742-9d5fc7ef-55fe-45d0-8c3d-477e2391a70c.png">
-<img width="730" alt="image" src="https://user-images.githubusercontent.com/40148194/158276808-5199b6ec-4083-4c48-8944-17f28cb37c9e.png">
-
-  
-  Using these images from the map it is clear that a new station was added to the yellow line
-  
-  Furthermore, we can inspect that there is a huge gap in ridership entries in the year 2015 for Oakton/Skokie
-  A quick internet search reveals that there was a dam collapse near the railways lines leading to closure of the station
-  
-  <img width="922" alt="image" src="https://user-images.githubusercontent.com/40148194/158281071-4c8a78e8-c4f8-4fb6-ba0c-8f7bd8dc23ca.png">
-
-  
-### 2 Berwyn and Lawrence closed
-  <img width="843" alt="image" src="https://user-images.githubusercontent.com/40148194/158276971-6991dd64-7f09-4b66-afbf-ac4d5ba578cc.png">
-  
-  Berwyn and lawrence stations show no ridership information for the above date, on searching the internet it becomes clear that these stations are temporarily closed
-  
-  Ridership info for Berwyn
-  <img width="1176" alt="image" src="https://user-images.githubusercontent.com/40148194/158280299-095818c0-9cef-4c33-baa8-65355632adf9.png">
-
-  Ridership info for lawrence
-  
-  <img width="1202" alt="image" src="https://user-images.githubusercontent.com/40148194/158280383-db1f7a91-8b11-4ee0-a582-c6451a46dfcc.png">
-
-  
-  
-### 3 Washington abandoned on the red line
-  
-  <img width="755" alt="image" src="https://user-images.githubusercontent.com/40148194/158277899-30b15ed9-d48e-4592-ab9c-4c739811879b.png">
-  
-  <img width="733" alt="image" src="https://user-images.githubusercontent.com/40148194/158277979-f15ebe30-f339-4354-b7fe-14c6ca249bc7.png">
-  
-  
- Washington was abandoned on the red line
-  
-the following ridership information on October 24th shows no entries for washington
-  <img width="600" alt="image" src="https://user-images.githubusercontent.com/40148194/158279081-1fec1436-d90f-4903-9e7a-51bdefd9092e.png">
-
- The last day wshington has any ridership information
-  <img width="1407" alt="image" src="https://user-images.githubusercontent.com/40148194/158279208-bf0629e0-63e0-46e8-a9ac-56630749d74f.png">
-
-  
-  A zoomed in view
-  
-  <img width="495" alt="image" src="https://user-images.githubusercontent.com/40148194/158279290-228b4898-4c51-4c89-b7df-e0bf6789070d.png">
-  
-  
-  Daily entries for Washington for the year 2006
-  
-  <img width="745" alt="image" src="https://user-images.githubusercontent.com/40148194/158279721-537474ef-aef9-42f7-8859-fbf09ae7a3f9.png">
-
-
-  
-  
- On the wikipedia page it says that the station was closed as a development of a superstaion is planned
-
-
-
-
-
