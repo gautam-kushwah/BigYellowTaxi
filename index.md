@@ -144,63 +144,30 @@ All of these visualisations, except 7 and 8, could also be viewed in the form of
 
 The trip data was obtained from Chicago Data portal, the link to the data could be found [here](https://data.cityofchicago.org/Transportation/CTA-Ridership-L-Station-Entries-Daily-Totals/5neh-572f)
 
+
+
+This list shows data about taxi trips reported during the year 2019.  There are total of 23 coulmns and 16.5 million rows, where each row represents a trip.
+
+For this app we have taken a subset of the data using 5 columns
+
+The columns are as follows
+**Trip Start Timestamp** - When the trip started, rounded to the nearest 15 minutes.
+
+**Trip Seconds** - Time of the trip in seconds
+
+**Trip Miles** - Distance of the trip in miles
+
+**Pickup Community Area** - The Community Area where the trip began. This column will be blank for locations outside Chicago. Integer value representing a community
+
+**Drop-off community Area** - The Community Area where the trip ended. This column will be blank for locations outside Chicago. Integer value representing a community
+
+**Company** - The taxi company
+
+
+
 The map data was also taken from the Chicago Data portal and tge link could be found [here](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6)
 
-This list shows daily totals of ridership, by station entry, for each 'L' station dating back to 2001. Dataset shows entries at all turnstiles, combined, for each station.
-
-The data consists of 5 columns and about 1.09 million rows.
-
-The columns are as follows
-**station_id** - Unique ID for a station
-
-**stationname** - The name of the station
-
-**date** - The date of the entries
-
-**daytype** - W=Weekday, A=Saturday, U=Sunday/Holiday
-
-**rides** - total number of ridership on that date
-
-
-
-The other files which contained the latitude and longitude of the stations was also taken from Chicago data portal which could be found [here](https://data.cityofchicago.org/Transportation/CTA-System-Information-List-of-L-Stops/8pix-ypme)
-
-The columns are as follows
-
-**STOP_ID**  
-
-**DIRECTION_ ID** Normal Direction of train taffic at the platform
-
-**STOP_NAME**
-
-**STATION_NAME**
-
-**STATION_DESCRIPTIVE_NAME**	- A more fully descriptive name of a station. 
-
-**MAP_ID**
-
-**ADA**	- Boolean (if the station is ada compliant)
-
-**RED** - Boolean (if the station serves red line)
-
-**BLUE** - Boolean (if the station serves blue line)
-
-**G** - Boolean (if the station serves green line)
-
-**BRN** - Boolean (if the station serves brown line)
-
-**P** - Boolean (if the station serves purple line)
-
-**Pexp** - Boolean (if the station serves Purple Express line)
-
-**Y** - Boolean (if the station serves Yellow line)
-
-**Pnk** - Boolean (if the station serves Pink line)
-
-**O** - Boolean (if the station serves Orange line)
-
-**Location** - The latitude and longitude values
-
+The data was provided in the form of a shapefile which was read with the help of an R library called rgdal.
 
 
 
@@ -227,9 +194,19 @@ library(pryr)
 
 The date was provided in a chr format, therefore it had to be converted into a usable format which was achieved through a R library called **lubridate**
 
-The data was downloaded in tsv format, since the free version of Shiny allows us to only work with files which are <5 mb, I used shell script to break it down into smaller files using shell and the following command
+The data was downloaded in csv format, since GitHub has a file size limit of 100 MB and prefers files less than 50MB, we used RStudio script to break it down into smaller files using the following command
 
 ```
+#Readin the file
+taxi <- read.table(file = "Taxi_Trips_-_2019.tsv", sep = "\t", header = TRUE, quote = "\"")
+
+#Retaining only necessary columns and removing unwanted ones
+taxi <- select(taxi, Trip.Start.Timestamp, Trip.Seconds, Trip.Miles, Pickup.Community.Area, Dropoff.Community.Area, Company )
+
+
+#Removing trips less than 0.5 and more than 100 miles and less than 60 seconds, and greater than 5 hours,
+taxi <- subset(taxi,  Trip.Miles >= 0.5 & Trip.Miles <= 100 & Trip.Seconds >= 60 & Trip.Seconds <= 18000 )
+
 #Splitting data file into smaller chunks
 no_of_chunks <- 15
 split_vector <- ceiling(1: nrow(taxi)/nrow(taxi) * no_of_chunks)
@@ -240,26 +217,23 @@ map2(res, paste0("part_", names(res), ".csv"), write.csv, row.names=FALSE)
 
 
 
-I then used a code editor to verify if the files were broken down correctly, and upon verifying that I loaded the filenames in a list in R and then stitched them together into a single table, hence being able to work with all the rows, using the code below
+We then used a code editor to verify if the files were broken down correctly, and upon verifying that we loaded the filenames in a list in R and then stitched them together into a single table, hence being able to work with all the rows, using the code below
   
 ```
-#read all file names in a temp variable
-temp = list.files(pattern="parta..tsv")
-allData2 <- lapply(temp, read.delim)
-allData <- do.call(rbind, allData2)
+#Reading from the split csv files
+
+taxi_original <- do.call(rbind, lapply(list.files(pattern = "*.csv"), fread)) 
 ```
 
-I then extracted the the info on the lines the stop serves from  STATION_DESCRIPTIVE_NAME and created a new column and then merged the ridership data table with the stop info table
+We then read the map data using **rgdal**
  
 ```
-lat_long <- read.table(file = "CTA_-_System_Information_-_List_of__L__Stops.tsv", sep = "\t", header = TRUE, quote = "\"")
-lat_long$lines <- str_extract(lat_long$STATION_DESCRIPTIVE_NAME, "\\(.*\\)")
-lat_long$lines <- str_remove_all(lat_long$lines, "[\\(\\)]")
-lat_long <- lat_long %>% distinct(MAP_ID, lines, .keep_all = TRUE)
-mergedData <- merge(x = allData, y= lat_long, by.x = c("station_id"), by.y = c("MAP_ID"), all.x = TRUE)
+community_shp <- rgdal::readOGR("shp_files/geo_export_fca70ba1-774b-4562-b299-3cbfe3855c4d.shp",
+                                layer = "geo_export_fca70ba1-774b-4562-b299-3cbfe3855c4d", GDAL1_integer64_policy = TRUE)
+
 ```
   
-Next step was mapping the data onto the map for which I used the library **Leaflet**
+Next step was mapping the data onto the map for which we used the library **Leaflet**
   
 The basic syntax is below and a more detailed one could be viewed on the github repo the link for which has been provided above
 ```
@@ -278,9 +252,11 @@ The code for plotting various tables and bar graphs could also be found there
 
 
 The github repo for the source code could be found below
-[Github Repo CS424](https://github.com/gautam-kushwah/424_project2)
+[Github Repo CS424](https://github.com/csk01/Project_3_CS424)
 
-The source code is the file called **app.R**, with all the broken uptsv files named from partaa.tsv to partah.tsv and also the location data file.
+The source code is the file called **app.R**, with all the broken up csv files named from part_1.csv to part_15.tsv and also the location data file.
+
+The file used to preprocess the data is called **preprocessing.R**
 
 To run the code you would need to download and install R and R-Studio the links to which could be found [!here](https://repo.miserver.it.umich.edu/cran/) and [here](https://rstudio.com/products/rstudio/download/) respectively 
 
