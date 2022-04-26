@@ -285,5 +285,82 @@ To refer to the instructions on how to use and interact with app, please read th
 
 
 # Observation and Inferences 
+Interesting Inferences - Chicago Taxi Rides and Airports 
 
-  
+1.	If you the see map for rides from O’Hare for all taxi companies, we can see that most of the rides (>10%) were to the Loop and Outside Chicago, followed by communities in the north of Chicago. We can infer that people living far away(Below the Loop) from O’Hare are more likely to not take a taxi, possibly due to high taxi fares than the people living near O’Hare.  
+
+2.	It is also evident that people come to O’Hare to not just go to Chicago but also to go to places outside it as shown below. 
+
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/40148194/165195758-ae7ca472-7827-4702-99d6-83e22d8d6af8.png">
+
+ 
+
+
+3.	Likewise for rides from Garfield Ridge where Midway International airport is located, we can observe a similar trend for all taxi companies where most rides to, are outside chicago and the Loop and its adjoining communities. 
+ 
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/40148194/165195773-c352c123-8cb2-43a3-aee6-851dbde30a1f.png">
+
+
+
+4.	On viewing the rides to O’Hare on the map  we could see that most of the rides(>10%) to O’Hare were from O’Hare itself, and the loop and its adjoining areas - Near North Side, Near South Side, near West side. It is followed by Lake view and Outside chicago. 
+This means that most people who are in and near the Loop travel often to O’Hare. Since the loop is a major hub and tourist area, it could also explain why there are a lot of rides to O’Hare.
+
+5.	Also, since O’Hare is the an international airport, it explains why a larger percentage of people from outside Chicago  choose to take taxi rides to it than from most areas inside it. 
+
+ 
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/40148194/165195783-d33a4696-4cae-494f-9566-708aa88d8a5c.png">
+
+
+
+
+6.	Similarly on rides to Garfield Ridge, the rides are centered from the loop, Outside Chicago and surprisingly, O’Hare as shown below. When comparing it with rides to O’Hare we can say that people from outside Chicago prefer O’Hare to Midway comparatively. 
+ 
+
+![image](https://user-images.githubusercontent.com/40148194/165195738-d44f1b52-514c-462c-9588-87d250c718b3.png)
+
+
+7. Ride distance 
+
+On average, across all communities and taxi service providers,  we could observe that most rides are very short, less than 5km.
+
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/40148194/165195870-fa0087a5-93f7-4d29-9977-e5b21dedcd63.png">
+
+Likewise the time taken for the rides are also very short, in general. 
+
+<img width="305" alt="image" src="https://user-images.githubusercontent.com/40148194/165195919-7c8b5326-207a-4d51-bf73-82d38ced0fe6.png">
+
+However, if we look at rides to O’Hare, we can see that most ride distances were around 20-40km. This makes sense as the Loop and the adjoining areas are in that bin and it takes around 30-45 mins to travel there
+
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/40148194/165195965-08ec58c8-4067-4bcc-b17b-e1dab5c42bed.png">
+
+Likewise for rides from O’hare, we see a very similar trend
+
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/40148194/165196025-a68b5d67-0d0f-48d9-8b61-5329ea3766ea.png">
+
+This is supported by the daily graphs as well, if we look at the daily plots from O’Hare and Garfield ridge we see a very similar trend throughout the year. They seem to rise and fall in unison, expect that O’Hare has more number of rides in general. 
+
+They both have peaks in May and Dec, from which we could potentially infer that most people 
+
+From O'Hare
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/40148194/165196069-9f5b94a3-fa25-4dd4-9855-ef65d7fa216a.png">
+
+From Garfield
+
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/40148194/165196123-7c29a586-c334-4adf-b18f-c59393ea0601.png">
+
+
+To O'Hare
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/40148194/165196158-3b2bbda3-2466-4643-8c27-226e95599c4d.png">
+
+
+
+To GreenRidge
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/40148194/165196179-85aea4d7-8b77-4ace-999d-a519032f8333.png">
+
+
+
+
+
+
+
+
