@@ -316,7 +316,8 @@ This means that most people who are in and near the Loop travel often to O’Har
 6.	Similarly on rides to Garfield Ridge, the rides are centered from the loop, Outside Chicago and surprisingly, O’Hare as shown below. When comparing it with rides to O’Hare we can say that people from outside Chicago prefer O’Hare to Midway comparatively. 
  
 
-![image](https://user-images.githubusercontent.com/40148194/165195738-d44f1b52-514c-462c-9588-87d250c718b3.png)
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/40148194/165196292-b48f84cd-477c-42ed-8112-e33f066c79b8.png">
+
 
 
 7. Ride distance 
