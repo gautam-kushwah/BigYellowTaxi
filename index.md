@@ -293,14 +293,17 @@ Interesting Inferences - Chicago Taxi Rides and Airports
 
 **2.** It is also evident that people come to O’Hare to not just go to Chicago but also to go to places outside it as shown below. 
 
-<img width="468" alt="image" src="https://user-images.githubusercontent.com/40148194/165195758-ae7ca472-7827-4702-99d6-83e22d8d6af8.png" style="display:flex; margin: auto;">
+
+<img width="637" style="display:flex; margin: auto;" alt="image" src="https://user-images.githubusercontent.com/40148194/165198487-843ddbac-0a19-4c66-8b56-a41ce7aadb85.png">
+
 
  
 
 
 **3.** Likewise for rides from Garfield Ridge where Midway International airport is located, we can observe a similar trend for all taxi companies where most rides to, are outside chicago and the Loop and its adjoining communities. 
  
-<img width="468" alt="image" style="display:flex; margin: auto;" src="https://user-images.githubusercontent.com/40148194/165195773-c352c123-8cb2-43a3-aee6-851dbde30a1f.png">
+<img width="628" style="display:flex; margin: auto;" alt="image" src="https://user-images.githubusercontent.com/40148194/165198166-37affc9e-96c8-41fa-a682-4e559a8b961b.png">
+
 
 
 
@@ -310,7 +313,7 @@ This means that most people who are in and near the Loop travel often to O’Har
 **5.** Also, since O’Hare is the an international airport, it explains why a larger percentage of people from outside Chicago  choose to take taxi rides to it than from most areas inside it. 
 
  
-<img width="468" style="display:flex; margin: auto;" alt="image" src="https://user-images.githubusercontent.com/40148194/165195783-d33a4696-4cae-494f-9566-708aa88d8a5c.png">
+<img width="641" style="display:flex; margin: auto;" alt="image" src="https://user-images.githubusercontent.com/40148194/165198269-4a1bbfc6-ca0c-4607-828a-eeb03825dcdf.png">
 
 
 
@@ -318,7 +321,8 @@ This means that most people who are in and near the Loop travel often to O’Har
 **6.** Similarly on rides to Garfield Ridge, the rides are centered from the loop, Outside Chicago and surprisingly, O’Hare as shown below. When comparing it with rides to O’Hare we can say that people from outside Chicago prefer O’Hare to Midway comparatively. 
  
 
-<img width="468" alt="image" style="display:flex; margin: auto;" src="https://user-images.githubusercontent.com/40148194/165196292-b48f84cd-477c-42ed-8112-e33f066c79b8.png">
+<img width="617" style="display:flex; margin: auto;" alt="image" src="https://user-images.githubusercontent.com/40148194/165198346-a25bbe6f-a486-47c6-9289-e68c8a118615.png">
+
 
 
 
