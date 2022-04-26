@@ -82,13 +82,13 @@ The home page has all the controls for the visualisations shown i.e the map with
 
 
 There are 7 input controls
-1. Outside Chicago checkbox: A checkmark to decide whether or not to include data for trips ending or beginning outside chicago
-2. Mode: A radio button to select whether the ride ends or originates from a selected community
-3. Select Community: A dropdown list of all the chicago community areas. Includes "Outside Chicago" if the Outside Chicago checkbox is checked
-4. Select Taxi Company: A dropdown list of all the taxi companies included in the dataset
-5. Time Format: To select whether to view the time in 12hr or 24hr format on the visualisations
-6. Show Distance in: To select whether to show distance in km or miles on the visualisation
-7. Chicago Community Map: The map itslef can be used an input to select the community areas.
+1. **Outside Chicago checkbox:** A checkmark to decide whether or not to include data for trips ending or beginning outside chicago
+2. **Mode:** A radio button to select whether the ride ends or originates from a selected community
+3. **Select Community:** A dropdown list of all the chicago community areas. Includes "Outside Chicago" if the Outside Chicago checkbox is checked
+4. **Select Taxi Company:** A dropdown list of all the taxi companies included in the dataset
+5. **Time Format:** To select whether to view the time in 12hr or 24hr format on the visualisations
+6. **Show Distance in:** To select whether to show distance in km or miles on the visualisation
+7. **Chicago Community Map:** The map itslef can be used an input to select the community areas.
 
 
 The app has 8 visualisations
@@ -151,6 +151,8 @@ This list shows data about taxi trips reported during the year 2019.  There are 
 For this app we have taken a subset of the data using 5 columns
 
 The columns are as follows
+
+
 **Trip Start Timestamp** - When the trip started, rounded to the nearest 15 minutes.
 
 **Trip Seconds** - Time of the trip in seconds
