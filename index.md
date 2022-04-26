@@ -78,7 +78,9 @@ These sections could be navigated through using the navigation bar on the left.
 <img width="1429" alt="image" src="https://user-images.githubusercontent.com/40148194/165186139-b6f3f1ba-7cbc-4b82-80d3-14e57f2b1434.png">
 
 The home page has all the controls for the visualisations shown i.e the map with community areas locations and their data, in a separate section marked input controls.
-<img width="132" alt="image" src="https://user-images.githubusercontent.com/40148194/165186554-54b2d0b6-b95e-49e5-99ea-b077d231c951.png">
+
+
+<img width="132" style="display:flex; margin: auto;" alt="image" src="https://user-images.githubusercontent.com/40148194/165186554-54b2d0b6-b95e-49e5-99ea-b077d231c951.png">
 
 
 There are 7 input controls
