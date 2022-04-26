@@ -15,9 +15,8 @@ Gautam Kushwah & Krishnan C.S.
 [Link to Shiny App for Project 3](http://shiny.evl.uic.edu:3838/g16/kg-taxi/)
 
 ### Resources
-[Link to Video Walkthrough](https://www.youtube.com/watch?v=15eiq648v3A)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/15eiq648v3A" frameborder="0" allowfullscreen></iframe>
-
+[Link to Video Walkthrough](https://youtu.be/SUZfL_KAn9U)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SUZfL_KAn9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # Introduction
 
@@ -348,7 +347,7 @@ Likewise for rides from O’hare, we see a very similar trend
 
 This is supported by the daily graphs as well, if we look at the daily plots from O’Hare and Garfield ridge we see a very similar trend throughout the year. They seem to rise and fall in unison, expect that O’Hare has more number of rides in general. 
 
-They both have peaks in May and Dec, from which we could potentially infer that most people 
+They both have peaks in May and Dec, from which we could potentially infer that most people  travel around holidays.
 
 From O'Hare
 <img width="468" alt="image" style="display:flex; margin: auto;margin-left: 5px;" src="https://user-images.githubusercontent.com/40148194/165196069-9f5b94a3-fa25-4dd4-9855-ef65d7fa216a.png">
