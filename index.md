@@ -287,25 +287,25 @@ To refer to the instructions on how to use and interact with app, please read th
 # Observation and Inferences 
 Interesting Inferences - Chicago Taxi Rides and Airports 
 
-1. If you the see map for rides from O’Hare for all taxi companies, we can see that most of the rides (>10%) were to the Loop and Outside Chicago, followed by communities in the north of Chicago. We can infer that people living far away(Below the Loop) from O’Hare are more likely to not take a taxi, possibly due to high taxi fares than the people living near O’Hare.  
+**1.** If you the see map for rides from O’Hare for all taxi companies, we can see that most of the rides (>10%) were to the Loop and Outside Chicago, followed by communities in the north of Chicago. We can infer that people living far away(Below the Loop) from O’Hare are more likely to not take a taxi, possibly due to high taxi fares than the people living near O’Hare.  
 
-2. It is also evident that people come to O’Hare to not just go to Chicago but also to go to places outside it as shown below. 
+**2.** It is also evident that people come to O’Hare to not just go to Chicago but also to go to places outside it as shown below. 
 
 <img width="468" alt="image" src="https://user-images.githubusercontent.com/40148194/165195758-ae7ca472-7827-4702-99d6-83e22d8d6af8.png" style="display:flex; margin: auto;">
 
  
 
 
-3. Likewise for rides from Garfield Ridge where Midway International airport is located, we can observe a similar trend for all taxi companies where most rides to, are outside chicago and the Loop and its adjoining communities. 
+**3.** Likewise for rides from Garfield Ridge where Midway International airport is located, we can observe a similar trend for all taxi companies where most rides to, are outside chicago and the Loop and its adjoining communities. 
  
 <img width="468" alt="image" style="display:flex; margin: auto;" src="https://user-images.githubusercontent.com/40148194/165195773-c352c123-8cb2-43a3-aee6-851dbde30a1f.png">
 
 
 
-4. On viewing the rides to O’Hare on the map  we could see that most of the rides(>10%) to O’Hare were from O’Hare itself, and the loop and its adjoining areas - Near North Side, Near South Side, near West side. It is followed by Lake view and Outside chicago. 
+**4.** On viewing the rides to O’Hare on the map  we could see that most of the rides(>10%) to O’Hare were from O’Hare itself, and the loop and its adjoining areas - Near North Side, Near South Side, near West side. It is followed by Lake view and Outside chicago. 
 This means that most people who are in and near the Loop travel often to O’Hare. Since the loop is a major hub and tourist area, it could also explain why there are a lot of rides to O’Hare.
 
-5. Also, since O’Hare is the an international airport, it explains why a larger percentage of people from outside Chicago  choose to take taxi rides to it than from most areas inside it. 
+**5.** Also, since O’Hare is the an international airport, it explains why a larger percentage of people from outside Chicago  choose to take taxi rides to it than from most areas inside it. 
 
  
 <img width="468" style="display:flex; margin: auto;" alt="image" src="https://user-images.githubusercontent.com/40148194/165195783-d33a4696-4cae-494f-9566-708aa88d8a5c.png">
@@ -313,14 +313,14 @@ This means that most people who are in and near the Loop travel often to O’Har
 
 
 
-6. Similarly on rides to Garfield Ridge, the rides are centered from the loop, Outside Chicago and surprisingly, O’Hare as shown below. When comparing it with rides to O’Hare we can say that people from outside Chicago prefer O’Hare to Midway comparatively. 
+**6.** Similarly on rides to Garfield Ridge, the rides are centered from the loop, Outside Chicago and surprisingly, O’Hare as shown below. When comparing it with rides to O’Hare we can say that people from outside Chicago prefer O’Hare to Midway comparatively. 
  
 
 <img width="468" alt="image" style="display:flex; margin: auto;" src="https://user-images.githubusercontent.com/40148194/165196292-b48f84cd-477c-42ed-8112-e33f066c79b8.png">
 
 
 
-7. Ride distance 
+**7.** Ride distance 
 
 On average, across all communities and taxi service providers,  we could observe that most rides are very short, less than 5km.
 
@@ -343,20 +343,21 @@ This is supported by the daily graphs as well, if we look at the daily plots fro
 They both have peaks in May and Dec, from which we could potentially infer that most people 
 
 From O'Hare
-<img width="468" alt="image" style="display:flex; margin: auto;" src="https://user-images.githubusercontent.com/40148194/165196069-9f5b94a3-fa25-4dd4-9855-ef65d7fa216a.png">
+<img width="468" alt="image" style="display:flex; margin: auto;margin-left: 5px;" src="https://user-images.githubusercontent.com/40148194/165196069-9f5b94a3-fa25-4dd4-9855-ef65d7fa216a.png">
 
+<br>
 From Garfield
 
-<img width="468" alt="image" style="display:flex; margin: auto;" src="https://user-images.githubusercontent.com/40148194/165196123-7c29a586-c334-4adf-b18f-c59393ea0601.png">
+<img width="468" alt="image" style="display:flex; margin: auto; margin-left: 5px;" src="https://user-images.githubusercontent.com/40148194/165196123-7c29a586-c334-4adf-b18f-c59393ea0601.png">
 
-
+<br>
 To O'Hare
-<img width="468" alt="image" style="display:flex; margin: auto;" src="https://user-images.githubusercontent.com/40148194/165196158-3b2bbda3-2466-4643-8c27-226e95599c4d.png">
+<img width="468" alt="image" style="display:flex; margin: auto; margin-left: 5px;" src="https://user-images.githubusercontent.com/40148194/165196158-3b2bbda3-2466-4643-8c27-226e95599c4d.png">
 
 
-
+<br>
 To GreenRidge
-<img width="468" alt="image" style="display:flex; margin: auto;" src="https://user-images.githubusercontent.com/40148194/165196179-85aea4d7-8b77-4ace-999d-a519032f8333.png">
+<img width="468" alt="image" style="display:flex; margin: auto; margin-left: 5px;" src="https://user-images.githubusercontent.com/40148194/165196179-85aea4d7-8b77-4ace-999d-a519032f8333.png">
 
 
 
